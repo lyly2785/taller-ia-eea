@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sesión 0 · Taller IA · Elite Expert Academy</title>
+<style>
+  :root{
+    --navy-dark:#121B3A;
+    --navy:#1E2D6B;
+    --gold:#F5C842;
+    --grey-bg:#F7F7F9;
+    --text:#1A1A1A;
+    --muted:#5A5F73;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:var(--grey-bg);
+    line-height:1.6;
+  }
+  header.site{
+    background:var(--navy-dark);
+    color:#fff;
+    padding:40px 24px;
+  }
+  .container{
+    max-width:880px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  header.site .container{padding:0 24px;}
+  .brand{
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:bold;
+    margin-bottom:8px;
+  }
+  h1.title{
+    font-size:32px;
+    margin:0 0 6px 0;
+    color:#fff;
+  }
+  .subtitle{
+    color:#C9CEE8;
+    font-size:16px;
+    margin:0;
+  }
+  main{padding:40px 0 80px;}
+  section.block{
+    background:#fff;
+    border:1px solid #E5E5EA;
+    border-radius:8px;
+    padding:32px;
+    margin-bottom:28px;
+  }
+  .block-number{
+    font-size:13px;
+    letter-spacing:2px;
+    color:var(--navy);
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .block h2{
+    font-size:24px;
+    margin:0 0 4px 0;
+    color:var(--navy-dark);
+  }
+  .block h3{
+    font-size:18px;
+    margin:18px 0 6px 0;
+    color:var(--navy);
+  }
+  .block p{
+    color:var(--muted);
+    margin:6px 0 14px 0;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--navy);
+    color:#fff;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .btn:hover{background:var(--navy-dark);}
+  .btn.gold{
+    background:var(--gold);
+    color:var(--navy-dark);
+  }
+  .btn.gold:hover{background:#e0b438;}
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:16px;
+    margin-top:16px;
+  }
+  .card{
+    border:1px solid #E5E5EA;
+    border-radius:8px;
+    padding:18px;
+    text-align:center;
+  }
+  .card .icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:20px;
+    margin:0 auto 12px auto;
+  }
+  .card h4{
+    margin:0 0 4px 0;
+    font-size:16px;
+    color:var(--navy-dark);
+  }
+  .card .org{
+    font-size:12px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+  .card p{font-size:13px; margin:0 0 12px 0;}
+  .prompt-box{
+    background:var(--grey-bg);
+    border-left:4px solid var(--gold);
+    border-radius:0 6px 6px 0;
+    padding:14px 18px;
+    font-size:14px;
+    color:var(--text);
+    margin:10px 0;
+  }
+  .prompt-box.bad{border-left-color:#C8434E;}
+  .prompt-box.good{border-left-color:#1E7A34;}
+  .tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:4px;
+    margin-bottom:8px;
+  }
+  .tag.bad{background:#FBE6E8; color:#C8434E;}
+  .tag.good{background:#E6F4EA; color:#1E7A34;}
+  ul.checklist{padding-left:20px; color:var(--muted);}
+  ul.checklist li{margin-bottom:6px;}
+  footer.site{
+    background:var(--navy-dark);
+    color:#C9CEE8;
+    padding:32px 0;
+    font-size:13px;
+  }
+  footer.site .container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:20px;
+  }
+  footer.site .bio h4{
+    color:#fff;
+    margin:0 0 6px 0;
+  }
+  footer.site .meta{text-align:right;}
+  .timeline{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:14px;
+  }
+  .timeline span{
+    background:var(--grey-bg);
+    border:1px solid #E5E5EA;
+    border-radius:20px;
+    padding:6px 14px;
+    font-size:12px;
+    color:var(--navy);
+    font-weight:bold;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand">Vitaminas Tecnológicas · Capacitación IA</div>
+    <h1 class="title">Taller de IA Aplicada — Elite Expert Academy</h1>
+    <p class="subtitle">Sesión 0 · Fundamentos de IA · Sesión introductoria compartida (Grupos A, B y C) · Ref. TEM-EEA-001-2026</p>
+    <div class="timeline">
+      <span>2 horas</span>
+      <span>14 participantes</span>
+      <span>Virtual · Zoom / Meet</span>
+      <span>Instructora: Liliana Bayona Castañeda</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="block">
+    <div class="block-number">PRESENTACIÓN DEL TALLER</div>
+    <h2>Materiales de la Sesión 0</h2>
+    <p>Descarga la presentación de la sesión y consulta el temario completo del programa de capacitación.</p>
+    <a class="btn" href="#">[DESCARGAR PRESENTACIÓN — PDF]</a>
+  </section>
+
+  <section class="block">
+    <div class="block-number">01 //</div>
+    <h2>Encuesta de encuadre</h2>
+    <h3>Antes de comenzar, cuéntanos sobre ti</h3>
+    <p>Esta encuesta nos ayuda a conocer tu punto de partida con la IA generativa y personalizar el taller. Solo toma 2 minutos. Escanea el código o ingresa el enlace en Mentimeter.</p>
+    <ul class="checklist">
+      <li>¿Qué palabra te viene a la mente cuando piensas en IA?</li>
+      <li>¿Con qué frecuencia usas ChatGPT, Gemini o Claude en tu trabajo?</li>
+      <li>¿Cuál de estas herramientas has usado al menos una vez?</li>
+      <li>¿Qué tarea repetitiva de tu día a día te quita más tiempo?</li>
+    </ul>
+    <a class="btn gold" href="https://www.menti.com" target="_blank">Responder encuesta →</a>
+  </section>
+
+  <section class="block">
+    <div class="block-number">02 //</div>
+    <h2>Accesos a herramientas de IA</h2>
+    <p>Durante la sesión vamos a trabajar en vivo con las tres herramientas principales. Abre una sesión activa de cada una antes de empezar.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">C</div>
+        <h4>Claude</h4>
+        <div class="org">Anthropic</div>
+        <p>Documentos largos, redacción formal y análisis de texto extenso.</p>
+        <a class="btn" href="https://claude.ai" target="_blank">Abrir Claude →</a>
+      </div>
+      <div class="card">
+        <div class="icon">G</div>
+        <h4>ChatGPT</h4>
+        <div class="org">OpenAI</div>
+        <p>Brainstorming, primeros borradores y generación de ideas.</p>
+        <a class="btn" href="https://chatgpt.com" target="_blank">Abrir ChatGPT →</a>
+      </div>
+      <div class="card">
+        <div class="icon">✦</div>
+        <h4>Gemini</h4>
+        <div class="org">Google</div>
+        <p>Integración con Google Workspace: Docs, Sheets y Gmail.</p>
+        <a class="btn" href="https://gemini.google.com" target="_blank">Abrir Gemini →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-number">03 //</div>
+    <h2>Actividad — Antes y después de un prompt</h2>
+    <h3>El arte del prompting: contexto + instrucción + formato</h3>
+    <p>Compara estos dos prompts sobre el mismo caso real de EEA (correo de traspaso de Comercial a Académico) y observa la diferencia de resultado cuando se ejecutan en vivo.</p>
+
+    <span class="tag bad">Antes</span>
+    <div class="prompt-box bad">
+      "Escribe un correo para pasar un alumno a académico"
+    </div>
+
+    <span class="tag good">Después</span>
+    <div class="prompt-box good">
+      "Eres parte del equipo comercial de Elite Expert Academy, una academia online de estética avanzada. Escribe un correo formal de traspaso (handoff) al área académica para una alumna que acaba de inscribirse en el curso de [nombre del curso]. El correo debe incluir: nombre de la alumna, curso adquirido, fecha de inicio sugerida, y una nota sobre su nivel de experiencia previa (principiante). Tono profesional y cálido, máximo 120 palabras, en español."
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-number">04 //</div>
+    <h2>Criterio de uso — qué NO compartir con una IA</h2>
+    <p>Antes de practicar con datos reales de EEA, revisa estas reglas con tu grupo:</p>
+    <ul class="checklist">
+      <li>Datos personales completos de un alumno (nombre + contacto + pago en un mismo prompt).</li>
+      <li>Información financiera interna de la empresa sin anonimizar.</li>
+      <li>Contraseñas, accesos o credenciales de cualquier sistema.</li>
+      <li>Cualquier cifra o dato generado por la IA debe verificarse antes de usarse — la IA puede "alucinar".</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="block-number">05 //</div>
+    <h2>Autoevaluación — Kahoot</h2>
+    <p>Pon a prueba lo aprendido en la Sesión 0 con un quiz de 8 preguntas. Si no se alcanza a jugar en vivo durante la sesión, queda disponible aquí como repaso.</p>
+    <a class="btn gold" href="https://kahoot.it" target="_blank">Jugar Kahoot →</a>
+  </section>
+
+  <section class="block">
+    <div class="block-number">06 //</div>
+    <h2>Próximas sesiones</h2>
+    <div class="cards">
+      <div class="card">
+        <h4>Grupo A</h4>
+        <div class="org">Comercial y Soporte</div>
+        <p>Sesiones A1 y A2 — IA para ventas, gestión y reportes.</p>
+      </div>
+      <div class="card">
+        <h4>Grupo B</h4>
+        <div class="org">Académico y Administrativo</div>
+        <p>Sesiones B1 y B2 — Material didáctico, coordinación y administración.</p>
+      </div>
+      <div class="card">
+        <h4>Grupo C</h4>
+        <div class="org">Tráfico y Creativo</div>
+        <p>Sesiones C1 y C2 — Contenido, copy y análisis de métricas.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="bio">
+      <h4>Liliana Bayona Castañeda</h4>
+      <p style="max-width:480px;">Ingeniera de Sistemas · Magíster en Gestión de la Información (UPV España, becaria PRONABEC) · Docente universitaria UCV · Especialista en Calidad e Información (ISO 9001, Power BI, SharePoint).</p>
+    </div>
+    <div class="meta">
+      Vitaminas Tecnológicas<br>
+      @vitaminas_tecnologicas<br>
+      administracion@vitaminas-tecnologicas.com<br>
+      TEM-EEA-001-2026 · Sesión 0
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
