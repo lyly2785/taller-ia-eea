@@ -31,7 +31,18 @@
     margin:0 auto;
     padding:0 24px;
   }
-  header.site .container{padding:0 24px;}
+  header.site .container{padding:0 24px; display:flex; align-items:flex-start; gap:20px;}
+  header.site img.logo{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:#fff;
+    object-fit:contain;
+    padding:4px;
+    flex-shrink:0;
+    margin-top:4px;
+  }
+  header.site .header-text{flex:1;}
   .brand{
     font-size:13px;
     letter-spacing:2px;
@@ -190,12 +201,92 @@
     color:var(--navy);
     font-weight:bold;
   }
+  .instructor{
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .instructor img{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--gold);
+  }
+  .instructor-info h2{margin-bottom:2px;}
+  .instructor-info .role{
+    color:var(--navy);
+    font-weight:bold;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+  .pill{
+    display:inline-block;
+    background:var(--grey-bg);
+    border:1px solid #E5E5EA;
+    border-radius:20px;
+    padding:5px 14px;
+    font-size:12px;
+    color:var(--navy-dark);
+    font-weight:bold;
+    margin:4px 6px 0 0;
+  }
+  .meta-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:14px;
+    font-size:14px;
+  }
+  .meta-table td{
+    border:1px solid #E5E5EA;
+    padding:10px 14px;
+    vertical-align:top;
+  }
+  .meta-table td:first-child{
+    background:var(--grey-bg);
+    font-weight:bold;
+    color:var(--navy-dark);
+    width:150px;
+  }
+  .rita-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0;
+    font-size:14px;
+  }
+  .rita-table th{
+    background:var(--navy);
+    color:#fff;
+    text-align:left;
+    padding:10px 14px;
+    font-size:13px;
+    width:130px;
+  }
+  .rita-table td{
+    border:1px solid #E5E5EA;
+    padding:10px 14px;
+    color:var(--text);
+  }
+  .meta-card{
+    background:var(--grey-bg);
+    border-left:4px solid var(--navy);
+    border-radius:0 6px 6px 0;
+    padding:14px 18px;
+    margin:14px 0;
+    font-size:14px;
+  }
+  .meta-card b{color:var(--navy-dark);}
 </style>
 </head>
 <body>
 
 <header class="site">
   <div class="container">
+    <img class="logo" src="logo_vt.png" alt="Vitaminas Tecnológicas">
+    <div class="header-text">
     <div class="brand">Vitaminas Tecnológicas · Capacitación IA</div>
     <h1 class="title">Taller de IA Aplicada — Elite Expert Academy</h1>
     <p class="subtitle">Sesión 0 · Fundamentos de IA · Sesión introductoria compartida (Grupos A, B y C) · Ref. TEM-EEA-001-2026</p>
@@ -205,16 +296,35 @@
       <span>Virtual · Zoom / Meet</span>
       <span>Instructora: Liliana Bayona Castañeda</span>
     </div>
+    </div>
   </div>
 </header>
 
 <main class="container">
 
   <section class="block">
+    <div class="block-number">SOBRE LA INSTRUCTORA</div>
+    <div class="instructor">
+      <img src="foto_liliana.jpeg" alt="Liliana Bayona Castañeda">
+      <div class="instructor-info">
+        <h2>Mg. Liliana Bayona Castañeda</h2>
+        <div class="role">Consultora en Tecnología e IA · Vitaminas Tecnológicas</div>
+        <p>Ingeniera de Sistemas y Magíster en Gestión de la Información (UPV, España — becaria PRONABEC). Docente universitaria en UCV. Especialista en gestión de calidad e información, con experiencia en ISO 9001, Power BI y SharePoint.</p>
+        <div>
+          <span class="pill">Mg. Gestión de la Información</span>
+          <span class="pill">Ing. de Sistemas</span>
+          <span class="pill">Scrum Master</span>
+          <span class="pill">@vitaminas_tecnologicas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
     <div class="block-number">PRESENTACIÓN DEL TALLER</div>
     <h2>Materiales de la Sesión 0</h2>
     <p>Descarga la presentación de la sesión y consulta el temario completo del programa de capacitación.</p>
-    <a class="btn" href="#">[DESCARGAR PRESENTACIÓN — PDF]</a>
+    <a class="btn" href="Sesion0_Presentacion.pdf">[DESCARGAR PRESENTACIÓN — PDF]</a>
   </section>
 
   <section class="block">
@@ -233,8 +343,19 @@
 
   <section class="block">
     <div class="block-number">02 //</div>
-    <h2>Accesos a herramientas de IA</h2>
-    <p>Durante la sesión vamos a trabajar en vivo con las tres herramientas principales. Abre una sesión activa de cada una antes de empezar.</p>
+    <h2>¿Qué rol cumple la IA en cada tarea?</h2>
+    <p>Más útil que pensar "ChatGPT vs. Claude vs. Gemini" es pensar en qué <b>rol</b> necesitas que cumpla la IA. Cada rol implica un nivel distinto de actividad humana: cuanto más "Creador" es el rol, más responsabilidad de revisión recae en ti.</p>
+    <table class="rita-table">
+      <tr><th>Rol de la IA</th><th>Qué hace</th><th>Caso EEA</th></tr>
+      <tr><td><b>Espejo</b></td><td>Refleja y analiza lo que tú produces, sin decidir.</td><td>Revisar un correo ya escrito y detectar tono o errores.</td></tr>
+      <tr><td><b>Informador</b></td><td>Entrega información organizada, sin sugerir acción.</td><td>Listar plantillas de mensajes de seguimiento por tipo de lead.</td></tr>
+      <tr><td><b>Interlocutor</b></td><td>Conversa y responde preguntas de forma reactiva.</td><td>Simular la respuesta de una alumna para practicar un guión de venta.</td></tr>
+      <tr><td><b>Copiloto</b></td><td>Asiste en la ejecución de una tarea, sin tomar el control.</td><td>Resumir el estado semanal de leads o de matrícula (Claude).</td></tr>
+      <tr><td><b>Asesor experto</b></td><td>Orienta con criterio especializado sobre un tema.</td><td>Sugerir cómo estructurar una encuesta de nivelación académica.</td></tr>
+      <tr><td><b>Creador</b></td><td>Genera contenido o soluciones de forma autónoma.</td><td>Redactar 10 captions o 3 variaciones de copy para testeo A/B.</td></tr>
+    </table>
+    <div class="meta-card">La IA <b>no reemplaza tu cerebro: amplifica tus hábitos</b>. Si revisas, verificas y aportas criterio, la IA amplifica eso. Si delegas sin revisar, también amplifica esa pereza — y el resultado se nota.</div>
+    <h3>Accesos directos</h3>
     <div class="cards">
       <div class="card">
         <div class="icon">C</div>
@@ -262,18 +383,24 @@
 
   <section class="block">
     <div class="block-number">03 //</div>
-    <h2>Actividad — Antes y después de un prompt</h2>
-    <h3>El arte del prompting: contexto + instrucción + formato</h3>
-    <p>Compara estos dos prompts sobre el mismo caso real de EEA (correo de traspaso de Comercial a Académico) y observa la diferencia de resultado cuando se ejecutan en vivo.</p>
+    <h2>El arte del prompting — método RITA</h2>
+    <h3>Rol · Interacción · Tarea · Adaptabilidad</h3>
+    <p>Un prompt estructurado define quién debe ser la IA, cómo debe interactuar contigo, qué tiene que hacer exactamente y cómo adaptarse a tu contexto. Caso real de EEA: correo de traspaso (handoff) de Comercial a Académico.</p>
+    <table class="rita-table">
+      <tr><th>Rol</th><td>"Eres parte del equipo comercial de Elite Expert Academy, una academia online de estética avanzada."</td></tr>
+      <tr><th>Interacción</th><td>"Si falta algún dato de la alumna, pregúntamelo antes de redactar el correo."</td></tr>
+      <tr><th>Tarea</th><td>"Escribe un correo formal de traspaso al área académica para una alumna recién inscrita en [curso]. Incluye nombre, curso, fecha de inicio sugerida y nivel de experiencia previa."</td></tr>
+      <tr><th>Adaptabilidad</th><td>"Tono profesional y cálido, máximo 120 palabras, en español."</td></tr>
+    </table>
 
-    <span class="tag bad">Antes</span>
+    <span class="tag bad">Sin RITA</span>
     <div class="prompt-box bad">
       "Escribe un correo para pasar un alumno a académico"
     </div>
 
-    <span class="tag good">Después</span>
+    <span class="tag good">Con RITA</span>
     <div class="prompt-box good">
-      "Eres parte del equipo comercial de Elite Expert Academy, una academia online de estética avanzada. Escribe un correo formal de traspaso (handoff) al área académica para una alumna que acaba de inscribirse en el curso de [nombre del curso]. El correo debe incluir: nombre de la alumna, curso adquirido, fecha de inicio sugerida, y una nota sobre su nivel de experiencia previa (principiante). Tono profesional y cálido, máximo 120 palabras, en español."
+      "Eres parte del equipo comercial de Elite Expert Academy, una academia online de estética avanzada. Si falta algún dato de la alumna, pregúntamelo antes de redactar el correo. Escribe un correo formal de traspaso (handoff) al área académica para una alumna que acaba de inscribirse en el curso de [nombre del curso]. El correo debe incluir: nombre de la alumna, curso adquirido, fecha de inicio sugerida, y una nota sobre su nivel de experiencia previa (principiante). Tono profesional y cálido, máximo 120 palabras, en español."
     </div>
   </section>
 
@@ -287,6 +414,7 @@
       <li>Contraseñas, accesos o credenciales de cualquier sistema.</li>
       <li>Cualquier cifra o dato generado por la IA debe verificarse antes de usarse — la IA puede "alucinar".</li>
     </ul>
+    <div class="meta-card">La promesa real de la IA es <b>mejor pensamiento, no menos pensamiento</b>: más opciones, no decisiones automáticas. El precio de usarla sin criterio son decisiones opacas ("lo dijo la IA"), sesgos amplificados y pérdida de confianza del equipo.</div>
   </section>
 
   <section class="block">
@@ -323,11 +451,10 @@
 <footer class="site">
   <div class="container">
     <div class="bio">
-      <h4>Liliana Bayona Castañeda</h4>
-      <p style="max-width:480px;">Ingeniera de Sistemas · Magíster en Gestión de la Información (UPV España, becaria PRONABEC) · Docente universitaria UCV · Especialista en Calidad e Información (ISO 9001, Power BI, SharePoint).</p>
+      <h4>Vitaminas Tecnológicas</h4>
+      <p style="max-width:480px;">Consultoría en tecnología e IA aplicada al trabajo.</p>
     </div>
     <div class="meta">
-      Vitaminas Tecnológicas<br>
       @vitaminas_tecnologicas<br>
       administracion@vitaminas-tecnologicas.com<br>
       TEM-EEA-001-2026 · Sesión 0
